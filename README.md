@@ -1,7 +1,7 @@
 ### [Aplikasi Perekaman Toko Buku](http://bookstore-adesug.herokuapp.com/)
 ### [Diagram dan penjelasan](https://drive.google.com/file/d/1DsYMeY8FXMdUVxyXjaFOSRkWBNsQ4oB5/view?usp=sharing)
 #### By
-    * Nama  : Ade Sugiantoro
+    *Nama  : Ade Sugiantoro
     * NIM   : 18090064
     * Kelas : 6B
 #### Tools
