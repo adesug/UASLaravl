@@ -11,23 +11,27 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
+  <h4 class="text-center">Form Edit Data Buku</h4>
+  
     <form action="{{route('buku.update',$buku->id)}} " method="POST">
     @csrf
     <input type="hidden" name="_method" value="PUT">
+    <div class="container mt-3">
     <div class="form-group">
-      <label for="exampleInputEmail1">Judul Buku</label>
+      <label for="exampleInputEmail1" class="font-weight-bold">Judul Buku</label>
       <input type="text" name="judulBuku" class="form-control" value="{{$buku->judulBuku}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Judul Buku">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Penerbit</label>
+      <label for="exampleInputPassword1" class="font-weight-bold">Penerbit</label>
       <input type="text" name="penerbit" class="form-control" value="{{$buku->penerbit}}" id="exampleInputPassword1" placeholder="Masukkan Penerbit buku">
     </div>
     <div class="form-group">
-        <label for="exampleInputPassword1">Penulis</label>
+        <label for="exampleInputPassword1" class="font-weight-bold">Penulis</label>
         <input type="text" name="penulis" class="form-control" value="{{$buku->penulis}}" id="exampleInputPassword1" placeholder="Masukkan Penulis buku">
       </div>
   
-    <button type="submit" class="btn btn-primary">Tambah</button>
+    <button type="submit" class="btn btn-warning" >Edit</button>
   </form>
+</div>
 </body>
 </html>
