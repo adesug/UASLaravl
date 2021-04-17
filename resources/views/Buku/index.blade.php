@@ -11,12 +11,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-    ini halaman buku
-    <a href="{{route('buku.create')}}" class="btn btn-primary">Tambah</a>
-    <table class="table table-striped">
-        <thead>
+
+    <h2 class="text-center">Aplikasi perekaman Data Buku</h2>
+    <p class="font-weight-light text-center">Ade Sugiantoro (18090064)</p>
+
+   <div class="container mt-3">
+    <a href="{{route('buku.create')}}" class="btn btn-success mb-2">Tambah</a>
+   
+    <table class="table table-striped ">
+        <thead class="thead-dark">
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">NO</th>
             <th scope="col">Judul Buku</th>
             <th scope="col">Penerbit</th>
             <th scope="col">Penulis</th>
@@ -39,8 +44,8 @@
                     <form action="{{route('buku.destroy',$buku->id)}}" method='POST'>
                     @csrf
                     <input type="hidden" name="_method" value="delete">
-                    <a type="button" href="{{route('buku.edit',$buku->id)}}" class="btn btn-info">Edit</a>
-                    <button type="submit" class="btn btn-info">Hapus</button>
+                    <a type="button" href="{{route('buku.edit',$buku->id)}}" class="btn btn-warning">Edit</a>
+                    <button type="submit" class="btn btn-danger">Hapus</button>
                     </form>
                 </td>
               </tr>
@@ -48,6 +53,7 @@
             @endforeach
         </tbody>
       </table>
+    </div>
     
 </body>
 </html>
