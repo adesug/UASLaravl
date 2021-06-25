@@ -18,6 +18,8 @@ class CreateBukusTable extends Migration
             $table->string('judulBuku');
             $table->string('penulis');
             $table->string('penerbit');
+            $table->string('gambar');
+            $table->string('public_id');
             $table->timestamps();
         });
     }

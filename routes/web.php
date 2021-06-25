@@ -24,4 +24,9 @@ Route::post('/buku/store','BukuController@store')->name('buku.store');
 Route::delete('/buku/{id}','BukuController@destroy')->name('buku.destroy');
 Route::get('/buku/{id}/edit','BukuController@edit')->name('buku.edit');
 Route::put('/buku/{id}','BukuController@update')->name('buku.update');
+Route::get('/cetak','BukuController@cetak')->name('buku.cetak');
 
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

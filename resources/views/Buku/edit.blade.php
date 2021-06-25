@@ -13,7 +13,7 @@
 <body>
   <h4 class="text-center">Form Edit Data Buku</h4>
   
-    <form action="{{route('buku.update',$buku->id)}} " method="POST">
+    <form action="{{route('buku.update',$buku->id)}} " method="POST" enctype="multipart/form-data">
     @csrf
     <input type="hidden" name="_method" value="PUT">
     <div class="container mt-3">
@@ -28,6 +28,13 @@
     <div class="form-group">
         <label for="exampleInputPassword1" class="font-weight-bold">Penulis</label>
         <input type="text" name="penulis" class="form-control" value="{{$buku->penulis}}" id="exampleInputPassword1" placeholder="Masukkan Penulis buku">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="font-weight-bold">Gambar</label>
+        <input type="file" name="gambar" class="form-control" value="{{$buku->gambar}}" id="exampleInputPassword1" placeholder="Masukkan Penulis buku">
+      </div>
+      <div class="form-group">
+      <img src="{{$buku -> gambar}}" height="80px" width="100px" alt="" srcset="">
       </div>
   
     <button type="submit" class="btn btn-warning" >Edit</button>

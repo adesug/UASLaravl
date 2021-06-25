@@ -17,11 +17,18 @@
 
    <div class="container mt-3">
     <a href="{{route('buku.create')}}" class="btn btn-success mb-2">Tambah</a>
+    <a href="{{route('buku.cetak')}}" target="_blank" class="btn btn-primary mb-2">Cetak</a>
+    
+    <form action="{{ route('logout') }}" method="POST">
+    @csrf
+    <button type="submit"  class="btn btn-primary mb-2">LOGOUT</button>
+    </form>
    
     <table class="table table-striped ">
         <thead class="thead-dark">
           <tr>
             <th scope="col">NO</th>
+            <th scope="col">Gambar Sapul</th>
             <th scope="col">Judul Buku</th>
             <th scope="col">Penerbit</th>
             <th scope="col">Penulis</th>
@@ -33,12 +40,18 @@
             @php
                 $nomor=1;
             @endphp
-            @foreach ($bukus as $buku)
+            @forelse ($bukus as $buku)
             <tr>
                 <th scope="row">{{$nomor++}}</th>
+                <!-- <td>{{$buku->gambar}}</td> -->
+                <td>
+                    <!-- <a href="{{asset('img/'.$buku -> gambar)}}" target="_blank" rel="nooper noreferrer">Lihat Gambar</a> -->
+                    <img src="{{$buku -> gambar}}" height="80px" width="100px" alt="" srcset="">
+                </td>
                 <td>{{$buku -> judulBuku}}</td>
                 <td>{{$buku -> penerbit}}</td>
                 <td>{{$buku -> penulis}}</td>
+                
                 <td>
                     
                     <form action="{{route('buku.destroy',$buku->id)}}" method='POST'>
@@ -49,8 +62,13 @@
                     </form>
                 </td>
               </tr>
+
+              @empty
+              <tr>
+              <td colspan="6" class="text-center">Tidak ada data</td>
+              </tr>
                 
-            @endforeach
+            @endforelse
         </tbody>
       </table>
     </div>
