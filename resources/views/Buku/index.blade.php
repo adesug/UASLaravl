@@ -16,13 +16,11 @@
     <p class="font-weight-light text-center">Ade Sugiantoro (18090064)</p>
 
    <div class="container mt-3">
-    <a href="{{route('buku.create')}}" class="btn btn-success mb-2">Tambah</a>
+    
+   <a href="{{route('buku.create')}}" class="btn btn-success mb-2">Tambah</a>
     <a href="{{route('buku.cetak')}}" target="_blank" class="btn btn-primary mb-2">Cetak</a>
     
-    <form action="{{ route('logout') }}" method="POST">
-    @csrf
-    <button type="submit"  class="btn btn-primary mb-2">LOGOUT</button>
-    </form>
+   
    
     <table class="table table-striped ">
         <thead class="thead-dark">
@@ -71,7 +69,14 @@
             @endforelse
         </tbody>
       </table>
+      <form action="{{ route('logout') }}" method="POST">
+    @csrf
+    
+    <button type="submit" margin-left="50px" class="btn btn-danger mb-2">LOGOUT</button>
+
+    </form>
     </div>
+    
     
 </body>
 </html>
